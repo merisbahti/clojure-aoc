@@ -53,6 +53,3 @@
 (comment ass1parsed)
 (comment (sol1 ass1parsed))
 (comment (sol1b ass1parsed))
-
-(comment ass2parsed)
-(comment (sol1 ass1parsed))
