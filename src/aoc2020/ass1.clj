@@ -1,11 +1,12 @@
 (ns aoc2020.ass1
-  (:require [clojure.core.reducers :refer [fold]]
+  (:require [clojure.core]
+            [clojure.core.reducers :refer [fold]]
             [clojure.test :refer [deftest is]]))
 
 (defn sum [xs] (fold + xs))
 (deftest sumtest (is (= 6 (sum [1 2 3]))))
 
-(defn mul [xs]  (reduce * 1 xs))
+(defn mul [xs]  (fold * xs))
 (deftest multest (is (= 6 (mul [1 2 3]))))
 
 (defn all-pairs [coll]
@@ -25,7 +26,6 @@
                         (first)
                         (mul)))
 
-
 (def testinput [1721
                 979
                 366
@@ -34,3 +34,8 @@
                 1456])
 
 (deftest test-input (is (= 514579 (sol1 testinput))))
+(def ass1lines (.split (clojure.core/slurp "input/a1/a.txt") "\n"))
+
+(def ass1parsed (map #(Integer/parseInt %) ass1lines))
+(comment ass1parsed)
+(comment (sol1 ass1parsed))
