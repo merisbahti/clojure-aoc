@@ -1,4 +1,4 @@
-(ns aoc2020.ass1
+(ns aoc2020.day1
   (:require [clojure.core]
             [clojure.core.reducers :refer [fold]]
             [clojure.test :refer [deftest is]]))
@@ -48,7 +48,7 @@
                 1456])
 
 (deftest test-input (is (= 514579 (sol1 testinput))))
-(def ass1lines (.split (clojure.core/slurp "input/a1/a.txt") "\n"))
+(def ass1lines (.split (clojure.core/slurp "input/day1/a.txt") "\n"))
 (def ass1parsed (map #(Integer/parseInt %) ass1lines))
 (comment ass1parsed)
 (comment (sol1 ass1parsed))
